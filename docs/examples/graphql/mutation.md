@@ -1,4 +1,4 @@
-import Appwrite
+import AppwriteServer
 
 let client = Client()
     .setEndpoint("https://[HOSTNAME_OR_IP]/v1") // Your API Endpoint
