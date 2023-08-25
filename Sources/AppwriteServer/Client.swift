@@ -24,7 +24,7 @@ open class Client {
     "x-sdk-platform": "server",
     "x-sdk-language": "swift",
     "x-sdk-version": "2.0.0",
-    "X-AppwriteServer-Response-Format": "1.0.0",
+    "X-Appwrite-Response-Format": "1.0.0",
   ]
 
   open var config: [String: String] = [:]
@@ -101,7 +101,7 @@ open class Client {
   ///
   open func setProject(_ value: String) -> Client {
     config["project"] = value
-    _ = addHeader(key: "X-AppwriteServer-Project", value: value)
+    _ = addHeader(key: "X-Appwrite-Project", value: value)
     return self
   }
 
@@ -116,7 +116,7 @@ open class Client {
   ///
   open func setKey(_ value: String) -> Client {
     config["key"] = value
-    _ = addHeader(key: "X-AppwriteServer-Key", value: value)
+    _ = addHeader(key: "X-Appwrite-Key", value: value)
     return self
   }
 
@@ -131,7 +131,7 @@ open class Client {
   ///
   open func setJWT(_ value: String) -> Client {
     config["jwt"] = value
-    _ = addHeader(key: "X-AppwriteServer-JWT", value: value)
+    _ = addHeader(key: "X-Appwrite-JWT", value: value)
     return self
   }
 
@@ -144,7 +144,7 @@ open class Client {
   ///
   open func setLocale(_ value: String) -> Client {
     config["locale"] = value
-    _ = addHeader(key: "X-AppwriteServer-Locale", value: value)
+    _ = addHeader(key: "X-Appwrite-Locale", value: value)
     return self
   }
 
@@ -434,7 +434,7 @@ open class Client {
       )
 
       offset += Client.chunkSize
-      headers["x-AppwriteServer-id"] = result["$id"] as? String
+      headers["x-Appwrite-id"] = result["$id"] as? String
       onProgress?(UploadProgress(
         id: result["$id"] as? String ?? "",
         progress: Double(min(offset, size)) / Double(size) * 100.0,
